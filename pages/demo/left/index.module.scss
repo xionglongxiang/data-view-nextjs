@@ -1,0 +1,9 @@
+@import '../config.scss';
+
+.left {
+  width: $left-width;
+  margin-left: $left-left-margin;
+  margin-right: $left-right-margin;
+  height: calc(100%);
+  background-color: lightgoldenrodyellow;
+}

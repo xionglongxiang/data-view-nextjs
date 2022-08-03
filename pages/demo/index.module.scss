@@ -1,0 +1,8 @@
+@import './config.scss';
+
+.big-screen-container {
+  .bottom {
+    height: calc(100% - $header-height - 15px);
+    display: flex;
+  }
+}

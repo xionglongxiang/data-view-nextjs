@@ -1,0 +1,9 @@
+@import '../config.scss';
+
+.container {
+  width: calc(
+    $design-width - $left-width - $right-width - $left-left-margin -
+      $right-right-margin - $left-right-margin - $right-left-margin
+  );
+  background-color: beige;
+}

@@ -1,0 +1,17 @@
+@import './config.scss';
+
+.header {
+  position: relative;
+  height: $header-height;
+  width: 100%;
+  text-align: center;
+  line-height: $header-height;
+  font-size: 40px;
+  background-color: aquamarine;
+}
+.bg {
+  display: block;
+  height: $header-height;
+  width: 2327px;
+  margin: 0 auto;
+}

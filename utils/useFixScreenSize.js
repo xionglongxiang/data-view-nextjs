@@ -1,13 +1,7 @@
-import { useEffect, useState } from 'react'
-import '../styles/globals.css'
-import Loading from './loading'
+import { useEffect } from 'react'
 
-function MyApp ({ Component, pageProps }) {
-  console.log('pageProps')
-  const [loading, setLoading] = useState(true)
-
+export default function useFixScreenSize () {
   useEffect(() => {
-    setLoading(true)
     refresh()
     function refresh () {
       const wh = window.innerHeight
@@ -26,22 +20,12 @@ function MyApp ({ Component, pageProps }) {
       const scale = Math.min(scaleH, scaleW).toFixed(6)
 
       console.log('scale', scale)
-      // document.getElementById('__next').style.zoom = scale
-
       document.getElementById('__next').style.transform = `scale(${scale})`
-      document.getElementById('__next').style.transformOrigin = `50% 50%`
-
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
+      document.getElementById('__next').style.transformOrigin = `50% center`
     }
     window.addEventListener('resize', refresh)
     return () => {
       window.removeEventListener('resize', refresh)
     }
   }, [])
-
-  return loading ? <Loading /> : <Component {...pageProps} />
 }
-
-export default MyApp
